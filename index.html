@@ -1,10 +1,7 @@
+<input type="text" id="b">
 <script>
-	var canvas = document.createElement("canvas");
-	var ctx = canvas.getContext("2d");
-
-	var imageData = ctx.createImageData(1024, 1024);
-	for (var i=0; i<1024*1024*4; i++)
-		imageData.data[i] = 0x41;
-
-	createImageBitmap(imageData, 0, 0, 0x10004, 0x10004, {premultiplyAlpha:"none"});
+var worker = new Worker("worker.js");
+setInterval(function() {
+	for (var i = 0; i < 10000; i++) worker.postMessage(new ArrayBuffer(2000000));
+});
 </script>
