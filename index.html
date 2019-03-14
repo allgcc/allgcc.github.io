@@ -1,0 +1,26 @@
+<html>
+<script>
+window.setTimeout("location.reload()",Math.random() * 100);
+function start() {
+o0=document.createElement('iframe');;
+o0.width=10;
+o0.src='iframes/skeleton.ogv';
+document.getElementById('store_div').appendChild(o0);
+window.setTimeout('startrly()', Math.random()*100);
+}
+function startrly() {
+o27=o0.contentDocument;
+o28=o27.documentElement;
+window.top.conce_35=function() { f=cb_onreadystatechange_36_1; return f(arguments, this);}
+o27.onreadystatechange=window.conce_35;
+document.body.appendChild(o27.firstChild);
+}
+function cb_onreadystatechange_36_1() {
+o28.innerHTML =document.documentElement;
+gc();
+}
+</script>
+<body onload="start()">
+<div id="store_div"></div>
+</body>
+</html>
