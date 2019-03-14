@@ -1,10 +1,42 @@
+<html>
+<body>
 <script>
-	var canvas = document.createElement("canvas");
-	var ctx = canvas.getContext("2d");
-
-	var imageData = ctx.createImageData(1024, 1024);
-	for (var i=0; i<1024*1024*4; i++)
-		imageData.data[i] = 0x41;
-
-	createImageBitmap(imageData, 0, 0, 0x8000, 0x8000, {premultiplyAlpha:"none"});
+  function readcFile(cFile)
+  {
+    var t;
+    cFile.file(function(file) {
+      var fReader = new FileReader();
+      fReader.onloadend = function(e) {
+        writecFile(cFile); 	
+      };
+      t=fReader.readAsText(file);
+    }, null);
+  };
+  
+  function writecFile(cFile)  {
+    var tcount=0;
+    while (1) {
+      cFile.createWriter(function(fWriter) {
+        fWriter.onwriteend = function(e) {
+          readcFile(cFile);
+        };
+        var blob = new Blob([String(Math.random())+String(Date.now())], {type: 'text/plain'});
+        fWriter.write(blob);
+      }, null);
+      tcount++;
+    };
+  };
+  
+  function initFs(fSystem) {
+    fSystem.root.getFile(String(Math.random())+String(Date.now()), {create: true}, function(currFile) {writecFile(currFile);}, null);
+  };
+  
+  function gofSys() {
+    webkitRequestFileSystem(TEMPORARY, 1024*1024,  function() {}, null);
+    webkitRequestFileSystem(TEMPORARY, 1024*1024, initFs, null);
+  };
+  
+  gofSys();  
 </script>
+</body>
+</html>
