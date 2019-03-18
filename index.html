@@ -1,1 +1,24 @@
-<script>alert("Attack!")</script>
+<script>
+alert("Scroll!")
+
+var sleep_interval = 16;
+
+function __scroll(var delta) {
+  var y=0, new_y=-1;
+  while(y != new_y) {
+  y = window.getScroll().y;  
+  window.scrollTo(0, y + delta);
+  new_y = window.getScroll().y;
+  sleep(sleep_interval);
+  }
+}
+
+__scroll(100);
+__scroll(-1000);
+__scroll(1000);
+__scroll(-1000);
+__scroll(1000);
+__scroll(-1000);
+__scroll(1000);
+
+</script>
