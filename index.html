@@ -1,24 +1,58 @@
-<script>
-alert("Scroll!")
-
-var sleep_interval = 16;
-
-function __scroll(var delta) {
-  var y=0, new_y=-1;
-  while(y != new_y) {
-  y = window.getScroll().y;  
-  window.scrollTo(0, y + delta);
-  new_y = window.getScroll().y;
-  sleep(sleep_interval);
-  }
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<html>
+<head>
+<script type="text/javascript">
+window.onload=function (){
+var obj = document.getElementById('text'); 
+obj.addEventListener('touchmove', function(event) { 
+// 如果这个元素的位置内只有一个手指的话 
+if (event.targetTouches.length == 1) { 
+var touch = event.targetTouches[0]; 
+// 把元素放在手指所在的位置 
+obj.style.left = touch.pageX + 'px'; 
+obj.style.top = touch.pageY + 'px'; 
+} 
+event.preventDefault();
+}, false);
+}
+</script>
+<style>
+#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#image {
+    line-height:30px;
+    background-color:#eeeeee;
+    float:left;
+    padding:5px; 
+}
+#text {
+    width:350px;
+    float:top;
+    padding:10px; 
 }
 
-__scroll(100);
-__scroll(-1000);
-__scroll(1000);
-__scroll(-1000);
-__scroll(1000);
-__scroll(-1000);
-__scroll(1000);
+</style>
+</head>
+<body>
+<div align="center">
+<img id="image" src=tulip.jpg>
+</div> 
+<div align="center">
+<textarea id="text" rows="30" cols="10">
+Passive event listeners
+2016年Google I/O上提出的概念，目的是用来提升页面滑动的流畅度。
 
-</script>
+For instance, in Chrome for Android 80% of the touch events that block scrolling never actually prevent it. 10% of these events add more than 100ms of delay to the start of scrolling, and a catastrophic delay of at least 500ms occurs in 1% of scrolls.
+
+在 Android 版 Chrome 浏览器的 touch 事件监听器的页面中，80% 的页面都不会调用 preventDefault 函数来阻止事件的默认行为。在滑动流畅度上，有 10% 的页面增加至少 100ms 的延迟，1% 的页面甚至增加 500ms 以上的延迟。
+由于浏览器无法预先知道一个事件处理函数中会不会调用 preventDefault()，它需要等到事件处理函数执行完后，才能去执行默认行为，然而事件处理函数执行是要耗时的，这样一来就会导致页面卡顿，也就是说，当浏览器等待执行事件的默认行为时，大部分情况是白等了。
+如果 Web 开发者能够提前告诉浏览器：“我不调用 preventDefault 函数来阻止事件事件行为”，那么浏览器就能快速生成事件，从而提升页面性能，Passive event listeners 的提出就解决了这样的问题。
+
+</textarea>
+</div>
+</body>
+</html>
