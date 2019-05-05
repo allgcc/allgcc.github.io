@@ -14,7 +14,13 @@ obj.style.top = touch.pageY + 'px';
 } 
 event.preventDefault();
 }, false);
+/*
+obj.addEventListener('scroll', function(event) {
+event.stopPropagation();
+}, false);
+*/
 }
+
 </script>
 <style>
 #header {
@@ -26,22 +32,21 @@ event.preventDefault();
 #image {
     line-height:30px;
     background-color:#eeeeee;
-    float:left;
     padding:5px; 
 }
 #text {
     width:350px;
-    float:top;
+	height:500px;
     padding:10px; 
 }
 
 </style>
 </head>
 <body>
-<div align="center">
+<div position:fixed>
 <img id="image" src=tulip.jpg>
-</div> 
-<div align="center">
+
+<div overflow:auto>
 <textarea id="text" rows="30" cols="10">
 Passive event listeners
 2016年Google I/O上提出的概念，目的是用来提升页面滑动的流畅度。
@@ -54,5 +59,6 @@ For instance, in Chrome for Android 80% of the touch events that block scrolling
 
 </textarea>
 </div>
+</div> 
 </body>
 </html>
