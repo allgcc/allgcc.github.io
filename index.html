@@ -13,7 +13,8 @@ obj.style.left = touch.pageX;
 obj.style.top = touch.pageY+500; 
 //window.print("px="+px+"py="+py);
 } 
-event.stopPropagation();
+//event.stopPropagation();
+event.preventDefault();
 }, {
   passive: true
 });
