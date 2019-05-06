@@ -9,11 +9,14 @@ obj.addEventListener('touchmove', function(event) {
 if (event.targetTouches.length == 1) { 
 var touch = event.targetTouches[0]; 
 // 把元素放在手指所在的位置 
-obj.style.left = touch.pageX + 'px'; 
-obj.style.top = touch.pageY + 'px'; 
+obj.style.left = touch.pageX; 
+obj.style.top = touch.pageY+500; 
+//window.print("px="+px+"py="+py);
 } 
-event.preventDefault();
-}, false);
+event.stopPropagation();
+}, {
+  passive: true
+});
 /*
 obj.addEventListener('scroll', function(event) {
 event.stopPropagation();
@@ -30,14 +33,14 @@ event.stopPropagation();
     padding:5px;
 }
 #image {
-    line-height:30px;
-    background-color:#eeeeee;
+    width:350px;
+	height:500px;
     padding:5px; 
 }
 #text {
     width:350px;
 	height:500px;
-    padding:10px; 
+    padding:5px; 
 }
 
 </style>
