@@ -1,16 +1,82 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<html>
+<head>
+
+<style type="text/css">
+#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#image {
+    width:350px;
+	height:500px;
+    padding:5px; 
+}
+#text {
+    width:350px;
+	height:500px;
+    padding:5px; 
+}
+
+.load-ing-img
+{
+width:100px;
+height:100px;
+background:white;
+-webkit-animation:haha1 .8s linear infinite;　　
+}
+
+@-webkit-keyframes haha1{
+ 
+		0%{-webkit-transform:rotate(0deg);}
+ 
+		25%{-webkit-transform:rotate(90deg);}
+ 
+		50%{-webkit-transform:rotate(180deg);}
+ 
+		75%{-webkit-transform:rotate(270deg);}
+ 
+		100%{-webkit-transform:rotate(360deg);}
+ 
+	}
+
+
+</style>
+</head>
 <body>
-<script>
-if (window.testRunner)
-    testRunner.dumpAsText();
-</script>
-This test passes if it doesn't crash.  Note: You might need to reload this test
-many times (or run the test under valgrind / ASAN) to see a crash.
-<span>
-<span>
-<video src="javascript:" onloadstart>
-<form  id="tjbvp"></form>
-</video>
-</span>
-</span>
-<keygen form="woujt">
+<div position:fixed>
+<img id="image" src=tulip.jpg>
+
+<div >
+Passive event listeners
+2016年Google I/O上提出的概念，目的是用来提升页面滑动的流畅度。
+
+For instance, in Chrome for Android 80% of the touch events that block scrolling never actually prevent it. 10% of these events add more than 100ms of delay to the start of scrolling, and a catastrophic delay of at least 500ms occurs in 1% of scrolls.
+
+在 Android 版 Chrome 浏览器的 touch 事件监听器的页面中，80% 的页面都不会调用 preventDefault 函数来阻止事件的默认行为。在滑动流畅度上，有 10% 的页面增加至少 100ms 的延迟，1% 的页面甚至增加 500ms 以上的延迟。
+由于浏览器无法预先知道一个事件处理函数中会不会调用 preventDefault()，它需要等到事件处理函数执行完后，才能去执行默认行为，然而事件处理函数执行是要耗时的，这样一来就会导致页面卡顿，也就是说，当浏览器等待执行事件的默认行为时，大部分情况是白等了。
+如果 Web 开发者能够提前告诉浏览器：“我不调用 preventDefault 函数来阻止事件事件行为”，那么浏览器就能快速生成事件，从而提升页面性能，Passive event listeners 的提出就解决了这样的问题。
+
+Passive event listeners
+2016年Google I/O上提出的概念，目的是用来提升页面滑动的流畅度。
+
+For instance, in Chrome for Android 80% of the touch events that block scrolling never actually prevent it. 10% of these events add more than 100ms of delay to the start of scrolling, and a catastrophic delay of at least 500ms occurs in 1% of scrolls.
+
+在 Android 版 Chrome 浏览器的 touch 事件监听器的页面中，80% 的页面都不会调用 preventDefault 函数来阻止事件的默认行为。在滑动流畅度上，有 10% 的页面增加至少 100ms 的延迟，1% 的页面甚至增加 500ms 以上的延迟。
+由于浏览器无法预先知道一个事件处理函数中会不会调用 preventDefault()，它需要等到事件处理函数执行完后，才能去执行默认行为，然而事件处理函数执行是要耗时的，这样一来就会导致页面卡顿，也就是说，当浏览器等待执行事件的默认行为时，大部分情况是白等了。
+如果 Web 开发者能够提前告诉浏览器：“我不调用 preventDefault 函数来阻止事件事件行为”，那么浏览器就能快速生成事件，从而提升页面性能，Passive event listeners 的提出就解决了这样的问题。
+
+</textarea>
+</div>
+</div>
+<div class="s-loading-frame bottom">
+<div class="bottom-load-ing">
+<div class="load-img-wrapper">
+<img class="load-ing-img" src="https://gss0.bdstatic.com/5bd1bjqh_Q23odCf/static/newtab/img/fetch_ing_8_0.png"> 
+</div>
+</div>
+</div>
 </body>
+</html>
