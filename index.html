@@ -13,17 +13,22 @@
     width:350px;
 	height:500px;
     padding:5px; 
+	display:block;
 }
 #text {
     width:350px;
 	height:500px;
     padding:5px; 
+	display:block;
+}
+
+#animate {
+    padding:5px; 
+	display:block;
 }
 
 .load-ing-img
 {
-width:100px;
-height:100px;
 background:white;
 -webkit-animation:haha1 .8s linear infinite;　　
 }
@@ -46,10 +51,10 @@ background:white;
 </style>
 </head>
 <body>
-<div position:fixed>
+
 <img id="image" src=tulip.jpg>
 
-<div >
+<div id="text">
 Passive event listeners
 2016年Google I/O上提出的概念，目的是用来提升页面滑动的流畅度。
 
@@ -68,15 +73,17 @@ For instance, in Chrome for Android 80% of the touch events that block scrolling
 由于浏览器无法预先知道一个事件处理函数中会不会调用 preventDefault()，它需要等到事件处理函数执行完后，才能去执行默认行为，然而事件处理函数执行是要耗时的，这样一来就会导致页面卡顿，也就是说，当浏览器等待执行事件的默认行为时，大部分情况是白等了。
 如果 Web 开发者能够提前告诉浏览器：“我不调用 preventDefault 函数来阻止事件事件行为”，那么浏览器就能快速生成事件，从而提升页面性能，Passive event listeners 的提出就解决了这样的问题。
 
-</textarea>
+
 </div>
+<div id="text">
+
+Passive event listeners
+
 </div>
-<div class="s-loading-frame bottom">
-<div class="bottom-load-ing">
-<div class="load-img-wrapper">
+
+
+<div id="animate">
 <img class="load-ing-img" src="https://gss0.bdstatic.com/5bd1bjqh_Q23odCf/static/newtab/img/fetch_ing_8_0.png"> 
-</div>
-</div>
 </div>
 </body>
 </html>
