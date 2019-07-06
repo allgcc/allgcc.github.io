@@ -16,6 +16,7 @@ function hideElements()
 {
 	hideByID('text'); 
 	hideByID('image');	
+	clearInterval(hideElements);
 	setInterval(showElements,3000); 
 }
 
@@ -32,6 +33,7 @@ function showElements()
 {
 	showByID('text'); 
 	showByID('image');	
+	clearInterval(showElements);
 	setInterval(hideElements,3000); 
 }
 
