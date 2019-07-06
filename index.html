@@ -3,6 +3,7 @@
 <head>
 <script type="text/javascript">
 
+var hShow, hHide;
 function hideByID(id)
 {
 	var obj = document.getElementById(id);
@@ -16,8 +17,8 @@ function hideElements()
 {
 	hideByID('text'); 
 	hideByID('image');	
-	clearInterval(hideElements);
-	setInterval(showElements,3000); 
+	clearInterval(hHide);
+	hShow = setInterval(showElements,3000); 
 }
 
 function showByID(id)
@@ -33,12 +34,12 @@ function showElements()
 {
 	showByID('text'); 
 	showByID('image');	
-	clearInterval(showElements);
-	setInterval(hideElements,3000); 
+	clearInterval(hShow);
+	hHide = setInterval(hideElements,3000); 
 }
 
 window.onload=function (){
-	setInterval(hideElements,3000); 	
+	hHide = setInterval(hideElements,3000); 	
 }
 
 
