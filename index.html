@@ -3,23 +3,40 @@
 <head>
 <script type="text/javascript">
 
-function clearByID(id)
+function hideByID(id)
 {
 	var obj = document.getElementById(id);
 	if (obj != null)
 	{
-		obj.parentNode.removeChild(obj);
+		obj.style.display = "none";
 	}
 }
 
-function clearElement()
+function hideElements()
 {
-	clearByID('text'); 
-	clearByID('image');	
+	hideByID('text'); 
+	hideByID('image');	
+	setInterval(showElements,3000); 
+}
+
+function showByID(id)
+{
+	var obj = document.getElementById(id);
+	if (obj != null)
+	{
+		obj.style.display = "block";
+	}
+}
+
+function showElements()
+{
+	showByID('text'); 
+	showByID('image');	
+	setInterval(hideElements,3000); 
 }
 
 window.onload=function (){
-	setInterval(clearElement,3000); 	
+	setInterval(hideElements,3000); 	
 }
 
 
