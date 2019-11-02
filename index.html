@@ -3,118 +3,48 @@
 <!--
 <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
 -->
-<html>
+
 <head>
-<script type="text/javascript">
-
-var hShow, hHide;
-function hideByID(id)
-{
-	var obj = document.getElementById(id);
-	if (obj != null)
-	{
-		obj.style.display = "none";
-	}
-}
-
-function hideElements()
-{
-	hideByID('text'); 
-	hideByID('image');	
-	clearInterval(hHide);
-	hShow = setInterval(showElements,3000); 
-}
-
-function showByID(id)
-{
-	var obj = document.getElementById(id);
-	if (obj != null)
-	{
-		obj.style.display = "block";
-	}
-}
-
-function showElements()
-{
-	showByID('text'); 
-	showByID('image');	
-	clearInterval(hShow);
-	hHide = setInterval(hideElements,3000); 
-}
-
-window.onload=function (){
-	//hHide = setInterval(hideElements,3000); 	
-}
-
-
-
-</script>
+  <title>神策数据 | 大数据用户行为分析产品 | Sensors Data</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="神策数据（官网），国内优秀的大数据分析工具，用户行为分析平台，支持私有化部署和SAAS，提供9大数据分析模型，提供在线数据分析Demo">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+  <meta name="keywords" content="神策数据，数据采集，数据分析工具，数据分析模型，网站数据分析，用户行为分析，用户画像，神策分析">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="http://www.sensorsdata.cn/assets/css/laboratory_b54eaaf.css">
+  <link rel="stylesheet" type="text/css" href="http://www.sensorsdata.cn/assets/css/home_0863db4.css">
+  <link rel="stylesheet" type="text/css" href="http://www.sensorsdata.cn/assets/css/home-index_96e74f1.css">
+  <link rel="stylesheet" type="text/css" href="http://www.sensorsdata.cn/assets/css/bootstrap337_65393f2.css">
+  <script async="" src="https://zz.bdstatic.com/linksubmit/push.js"></script><script src="https://hm.baidu.com/hm.js?bf5399c1b8bd2f8990ce3acf7dae876e" async=""></script><script src="sensorsdata.cn/assets/lib/jquery_e0e26d1.js"></script>
+  <script src="http://www.sensorsdata.cn/assets/lib/bootstrap_5a8a231.js"></script>
 <style>
+    @media screen and (max-width: 1000px) {
+      .header-menu-active header nav .nav-menu {
+        height: 838px
+      }
+    }
+    </style></head>
 
 
 
-#header {
-    background-color:black;
-    color:white;
-    text-align:center;
-    padding:5px;
-}
-
-
-.links_pic li {
-	float: left;
-	width: 100px;
-	text-align: center;
-	margin: 10px auto;
-	background-color:red;
-}
-.links_pic li img {
-#	width: 88px;
-#	height: 31px;
-}
-
-</style>
-</head>
-<body style="background-color:black;">
-
-<!--
-<div position:fixed>
-<img id="image" src=mountain.jpg>
-
-<div overflow:auto>
-<textarea id="text" rows="70" cols="100">
-Passive event listeners
-2016年Google I/O上提出的概念，目的是用来提升页面滑动的流畅度。
-
-For instance, in Chrome for Android 80% of the touch events that block scrolling never actually prevent it. 10% of these events add more than 100ms of delay to the start of scrolling, and a catastrophic delay of at least 500ms occurs in 1% of scrolls.
-
-在 Android 版 Chrome 浏览器的 touch 事件监听器的页面中，80% 的页面都不会调用 preventDefault 函数来阻止事件的默认行为。在滑动流畅度上，有 10% 的页面增加至少 100ms 的延迟，1% 的页面甚至增加 500ms 以上的延迟。
-由于浏览器无法预先知道一个事件处理函数中会不会调用 preventDefault()，它需要等到事件处理函数执行完后，才能去执行默认行为，然而事件处理函数执行是要耗时的，这样一来就会导致页面卡顿，也就是说，当浏览器等待执行事件的默认行为时，大部分情况是白等了。
-如果 Web 开发者能够提前告诉浏览器：“我不调用 preventDefault 函数来阻止事件事件行为”，那么浏览器就能快速生成事件，从而提升页面性能，Passive event listeners 的提出就解决了这样的问题。
-
-Passive event listeners
-2016年Google I/O上提出的概念，目的是用来提升页面滑动的流畅度。
-
-For instance, in Chrome for Android 80% of the touch events that block scrolling never actually prevent it. 10% of these events add more than 100ms of delay to the start of scrolling, and a catastrophic delay of at least 500ms occurs in 1% of scrolls.
-
-在 Android 版 Chrome 浏览器的 touch 事件监听器的页面中，80% 的页面都不会调用 preventDefault 函数来阻止事件的默认行为。在滑动流畅度上，有 10% 的页面增加至少 100ms 的延迟，1% 的页面甚至增加 500ms 以上的延迟。
-由于浏览器无法预先知道一个事件处理函数中会不会调用 preventDefault()，它需要等到事件处理函数执行完后，才能去执行默认行为，然而事件处理函数执行是要耗时的，这样一来就会导致页面卡顿，也就是说，当浏览器等待执行事件的默认行为时，大部分情况是白等了。
-如果 Web 开发者能够提前告诉浏览器：“我不调用 preventDefault 函数来阻止事件事件行为”，那么浏览器就能快速生成事件，从而提升页面性能，Passive event listeners 的提出就解决了这样的问题。
-
-</textarea>
-</div>
-</div> 
-<div id="link-site">
-<ul class="links_pic clear">
-<li><a href="http://www.filmtbt.com/" target="_blank"><img src=film.jpg alt=""></a></li>
-</ul>
-</div>
--->
-
-<div class="laboratory">
-          <img class="component grid" src="sensorsdata.cn/assets/img/laboratory/grid_017277d.png">
+<section class="banner">
+      <article>
+        <div class="slogen">
+          <p class="h2">
+            帮助企业实现数据驱动
+          </p>
+          <p class="h4 detail">
+            用户行为分析和智能应用解决方案服务商
+          </p>
+          <div class="buttons">
+            <a class="btn btn-standard4 area_banner" name="area_banner" href="/demo/demo.html" target="_blank">体验 Demo</a>
+            <a class="btn btn-standard3 area_banner show_video" name="area_banner" href="javascript:void 0">观看视频</a>
+          </div>
+        </div>
+        <div class="laboratory">
+          <img class="component grid" src="http://www.sensorsdata.cn/assets/img/laboratory/grid_017277d.png">
           <div class="component machine">
-            <img src="sensorsdata.cn/assets/img/laboratory/machine_b35833f.png">
+            <img src="http://www.sensorsdata.cn/assets/img/laboratory/machine_b35833f.png">
             <div class="component box_machine">
               <em class="component layer"></em>
               <em class="component layer"></em>
@@ -174,21 +104,21 @@ For instance, in Chrome for Android 80% of the touch events that block scrolling
                 <path id="pathPhone" d="M105.417009,218.5791 C89.7964849,227.803032,87.33725080,229.255212,84.2903746,229.286233 L81.8020835,227.884425 C2.95260334,183.463645,2.327776400,183.111642,1.80907665,182.598128 C1.45081302,181.976869,0.347214606,180.063138,1.00395668,177.617109 L2.9176875,176.513511 C171.348889,79.3836507,171.955051,79.0340926,172.458912,78.5316390 C172.810163,77.9264562,173.919108,76.0158183,173.269207,73.5679631 L171.358569,72.4590186 C96.3410782,28.9184634,95.7318128,28.5648425,95.2267412,28.0565912 C94.8769508,27.4451185,93.7800188,25.5275587,94.4452691,23.0838304 L96.3628289,21.9868984 L127.328752,4.27297312"></path>
                 <path id="pathMac1" d="M135.013256,9 L116.050928,20.3056501 L116.050928,20.3056501 C114.627818,21.1541321 114.161989,22.9956219 115.010471,24.4187327 C115.275302,24.8629186 115.650458,25.2311029 116.099534,25.4875551 L212.200673,80.3677592"></path>
                 <path id="pathMac2" d="M257.12507,106.022607 L449.679393,215.984056 L449.679393,215.984056 C452.738023,217.730739 456.490008,217.739513 459.556773,216.007153 L476.096041,206.664425 L476.096041,206.664425 C478.583556,205.259274 480.132938,202.634232 480.160971,199.777416 L480.994787,114.801673"></path>
-                <radialGradient cx="113.036" cy="28.5007" r="50" gradientUnits="userSpaceOnUse" id="linearGradientCordStreamPhone">
+                <radialGradient cx="15.6722" cy="169.772" r="50" gradientUnits="userSpaceOnUse" id="linearGradientCordStreamPhone">
                   <animate attributeName="cx" values="113.89;65.13;0.03;180.62;111.67;153.64" dur="2s" calcMode="linear" repeatCount="indefinite"></animate>
                   <animate attributeName="cy" values="190.91;216.67;179.16;70.78;29.36;2.95" dur="2s" calcMode="linear" repeatCount="indefinite"></animate>
                   <stop stop-color="#67FECB" offset="0%"></stop>
                   <stop stop-color="#67FECB" offset="25%"></stop>
                   <stop stop-color="#009A7A" offset="100%"></stop>
                 </radialGradient>
-                <radialGradient cx="160.416" cy="51.0729" r="60" gradientUnits="userSpaceOnUse" id="linearGradientCordStreamMac">
+                <radialGradient cx="362.483" cy="168.196" r="60" gradientUnits="userSpaceOnUse" id="linearGradientCordStreamMac">
                   <animate attributeName="cx" values="112;231;231;231;231;231;224;453;480;481" dur="2.5s" calcMode="linear" repeatCount="indefinite"></animate>
                   <animate attributeName="cy" values="23;92;92;92;92;92;92;218;205;92" dur="2.5s" calcMode="linear" repeatCount="indefinite"></animate>
                   <stop stop-color="#67FECB" offset="0%"></stop>
                   <stop stop-color="#67FECB" offset="25%"></stop>
                   <stop stop-color="#009A7A" offset="100%"></stop>
                 </radialGradient>
-                <radialGradient cx="109.88" cy="8.39535" r="30" gradientUnits="userSpaceOnUse" id="linearGradientCordStreamLaptop">
+                <radialGradient cx="64.9021" cy="9.69932" r="30" gradientUnits="userSpaceOnUse" id="linearGradientCordStreamLaptop">
                   <animate attributeName="cx" values="27.17;56.96;88.48;139.49" dur="2s" calcMode="linear" repeatCount="indefinite"></animate>
                   <animate attributeName="cy" values="23.68;5.95;20.83;-8.81" dur="2s" calcMode="linear" repeatCount="indefinite"></animate>
                   <stop stop-color="#67FECB" offset="0%"></stop>
@@ -248,7 +178,7 @@ For instance, in Chrome for Android 80% of the touch events that block scrolling
             </svg>
           </div>
           <div class="component laptop">
-            <img src="sensorsdata.cn/assets/img/laboratory/laptop_fd4699c.png">
+            <img src="http://www.sensorsdata.cn/assets/img/laboratory/laptop_fd4699c.png">
             <div class="component box_laptop">
               <div class="component layer">
                 <div class="component page">
@@ -296,7 +226,7 @@ For instance, in Chrome for Android 80% of the touch events that block scrolling
             </div>
           </div>
           <div class="component phone">
-            <img src="sensorsdata.cn/assets/img/laboratory/phone_66669bd.png">
+            <img src="http://www.sensorsdata.cn/assets/img/laboratory/phone_66669bd.png">
             <div class="component box_phone">
               <em class="component layer"></em>
             </div>
@@ -305,7 +235,7 @@ For instance, in Chrome for Android 80% of the touch events that block scrolling
             </div>
           </div>
           <div class="component mac">
-            <img src="sensorsdata.cn/assets/img/laboratory/mac_3336890.png">
+            <img src="http://www.sensorsdata.cn/assets/img/laboratory/mac_3336890.png">
             <div class="component box_mac">
               <div class="component layer">
                 <svg class="component folder" width="65px" height="66px" viewBox="0 0 65 66" xmlns="http://www.w3.org/2000/svg">
@@ -372,6 +302,8 @@ For instance, in Chrome for Android 80% of the touch events that block scrolling
             </div>
           </div>
         </div>
+      </article>
+    </section>
 		
 		
 </body>
